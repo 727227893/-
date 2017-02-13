@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击按钮让图片来回跑</title>
+		<style type="text/css">
+			#dan{
+				position:absolute;
+				top:50px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var dan = document.getElementById("dan");
+				var speed = 10;
+				btn.onclick = function(){
+					setInterval(function(){
+						//旧的位置；
+						var old_left = dan.style.left;
+						//新的位置;
+						var new_left = parseInt(old_left)+speed;
+						//赋予到原来；
+						dan.style.left = new_left+'px';
+						if(new_left == 600 || new_left == 0){
+							speed = speed*-1
+						}
+					},100)
+					
+				}
+				
+				
+				
+				
+				
+				
+			}
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="走你~~~" />
+		<br /><br />
+		<img src="img/dan.gif" id="dan" style="left:0px"/>
+	</body>
+</html>

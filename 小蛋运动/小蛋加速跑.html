@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小蛋加速跑</title>
+		<style type="text/css">
+			#dan{
+				position: absolute;
+				top:50px;
+				
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var dan = document.getElementById("dan");
+				btn.onclick = function(){
+					var speed = 10;
+					setInterval(function(){
+						//得到旧的left
+						speed++
+						var old_left = dan.style.left;
+						//计算新的left
+						var new_left = parseInt(old_left)+speed;
+						//赋值回去
+						dan.style.left = new_left+'px';
+					},50)	
+				}
+			}
+		</script>
+	</head>
+	<input type="button" name="btn" id="btn" value="走你~~~" />
+	<br /><br />
+	<img src="img/dan.gif" id="dan" style="left:0px"/>
+	<body>
+	</body>
+</html>
